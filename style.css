@@ -1,0 +1,318 @@
+/* Base Styles */
+:root {
+    --primary-color: #6b8e23;  /* Olive Green */
+    --primary-light: #8fbc8f;  /* Light Olive Green */
+    --primary-dark: #556b2f;   /* Dark Olive Green */
+    --bg-light: #f5f5f0;      /* Very light olive tint */
+    --bg-color: #98c499;      /* Light olive background */
+    --container-bg: #ffffff;   /* White container */
+    
+    /* Social Media Colors */
+    --facebook: #1877f2;
+    --instagram: #e4405f;
+    --twitter: #1da1f2;
+    --linkedin: #0a66c2;
+    --youtube: #ff0000;
+    
+    /* Text Colors */
+    --text-color: #2e2e1f;    /* Dark olive for text */
+    --text-light: #6b6b5e;    /* Lighter olive for secondary text */
+    
+    /* UI Colors */
+    --border-color: #d4d4c9;  /* Light olive border */
+    --hover-darken: 10%;
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-color) 100%);
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Language Selector */
+.language-selector {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.lang-btn {
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 20px;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.lang-btn:hover {
+    background-color: var(--primary-light);
+    color: white;
+    border-color: var(--primary-light);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background-color: var(--container-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Header */
+header {
+    margin: 2rem 0 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
+    border-radius: 3px;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+main {
+    margin-bottom: 2.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.social-button i {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Media Brand Colors */
+.facebook { background-color: var(--facebook); }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.twitter { background-color: var(--twitter); }
+.linkedin { background-color: var(--linkedin); }
+.youtube { background-color: var(--youtube); }
+
+/* Hover Effects */
+.facebook:hover { background-color: #166fe5; }
+.instagram:hover { opacity: 0.9; }
+.twitter:hover { background-color: #1a91da; }
+.linkedin:hover { background-color: #0956a0; }
+.youtube:hover { background-color: #e60000; }
+
+/* Text Links */
+a:not(.social-button) {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+}
+
+a:not(.social-button)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:not(.social-button):hover {
+    color: #2563eb;
+}
+
+a:not(.social-button):hover::after {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .social-buttons {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        position: static;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    .container {
+        padding: 1.75rem;
+        margin: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    .social-buttons {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+    
+    .social-button {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .social-button i {
+        font-size: 1.25rem;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-selector {
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--container-bg);
+        padding: 0.5rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .lang-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    body {
+        padding: 0.5rem;
+        display: block;
+    }
+    
+    .container {
+        padding: 1.25rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .social-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-button {
+        justify-content: flex-start;
+        padding: 0.75rem 1rem;
+    }
+}
